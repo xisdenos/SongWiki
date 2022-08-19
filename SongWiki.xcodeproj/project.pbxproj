@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		06459B7428AF57760054F510 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459B7328AF57760054F510 /* AppDelegate.swift */; };
 		06459B7628AF57760054F510 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459B7528AF57760054F510 /* SceneDelegate.swift */; };
-		06459B7828AF57760054F510 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459B7728AF57760054F510 /* ViewController.swift */; };
-		06459B7B28AF57760054F510 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06459B7928AF57760054F510 /* Main.storyboard */; };
+		06459B7828AF57760054F510 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459B7728AF57760054F510 /* LoginController.swift */; };
 		06459B7E28AF57760054F510 /* SongWiki.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 06459B7C28AF57760054F510 /* SongWiki.xcdatamodeld */; };
 		06459B8028AF57780054F510 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06459B7F28AF57780054F510 /* Assets.xcassets */; };
 		06459B8328AF57780054F510 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06459B8128AF57780054F510 /* LaunchScreen.storyboard */; };
@@ -40,8 +39,7 @@
 		06459B7028AF57760054F510 /* SongWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SongWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06459B7328AF57760054F510 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06459B7528AF57760054F510 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		06459B7728AF57760054F510 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		06459B7A28AF57760054F510 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		06459B7728AF57760054F510 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		06459B7D28AF57760054F510 /* SongWiki.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SongWiki.xcdatamodel; sourceTree = "<group>"; };
 		06459B7F28AF57780054F510 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06459B8228AF57780054F510 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -103,8 +101,7 @@
 			children = (
 				06459B7328AF57760054F510 /* AppDelegate.swift */,
 				06459B7528AF57760054F510 /* SceneDelegate.swift */,
-				06459B7728AF57760054F510 /* ViewController.swift */,
-				06459B7928AF57760054F510 /* Main.storyboard */,
+				06459B7728AF57760054F510 /* LoginController.swift */,
 				06459B7F28AF57780054F510 /* Assets.xcassets */,
 				06459B8128AF57780054F510 /* LaunchScreen.storyboard */,
 				06459B8428AF57780054F510 /* Info.plist */,
@@ -236,7 +233,6 @@
 			files = (
 				06459B8328AF57780054F510 /* LaunchScreen.storyboard in Resources */,
 				06459B8028AF57780054F510 /* Assets.xcassets in Resources */,
-				06459B7B28AF57760054F510 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06459B7E28AF57760054F510 /* SongWiki.xcdatamodeld in Sources */,
-				06459B7828AF57760054F510 /* ViewController.swift in Sources */,
+				06459B7828AF57760054F510 /* LoginController.swift in Sources */,
 				06459B7428AF57760054F510 /* AppDelegate.swift in Sources */,
 				06459B7628AF57760054F510 /* SceneDelegate.swift in Sources */,
 			);
@@ -301,14 +297,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		06459B7928AF57760054F510 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				06459B7A28AF57760054F510 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		06459B8128AF57780054F510 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -446,10 +434,9 @@
 				INFOPLIST_FILE = SongWiki/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -475,10 +462,9 @@
 				INFOPLIST_FILE = SongWiki/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
