@@ -96,18 +96,14 @@ class LoginView: UIView {
         return stack
     }()
     
-    lazy var noAccountButton: UIButton = {
-        let button = AuthButton()
-        let atts: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1, alpha: 0.87), .font: UIFont.systemFont(ofSize: 15)]
-        let attributedTitle = NSMutableAttributedString(string: "Não tem uma conta? ", attributes: atts)
-        let boldAtts: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1, alpha: 0.87), .font: UIFont.boldSystemFont(ofSize: 15)]
-        attributedTitle.append(NSAttributedString(string: "Registre-se", attributes: boldAtts))
-        button.setAttributedTitle(attributedTitle, for: .normal)
-        button.backgroundColor = UIColor(white: 1, alpha: 0)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-
+    //MARK: - Delegates
+    
+    public func configTextFieldDelegates(delegate: UITextFieldDelegate) {
+        self.loginTextField.delegate = delegate
+        self.passwordTextField.delegate = delegate
+    }
+    
+    //MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addSubview(self.gradient)
