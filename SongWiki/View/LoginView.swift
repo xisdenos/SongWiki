@@ -98,7 +98,6 @@ class LoginView: UIView {
         stack.addArrangedSubview(loginTextField)
         stack.addArrangedSubview(passwordTextField)
         stack.addArrangedSubview(logInButton)
-        
         stack.distribution = .fillEqually
         stack.isUserInteractionEnabled = true
         return stack
@@ -116,6 +115,13 @@ class LoginView: UIView {
         stack.isUserInteractionEnabled = true
         return stack
     }()
+    
+    //MARK: - Delegates
+    
+    public func configTextFieldDelegates(delegate: UITextFieldDelegate) {
+        self.loginTextField.delegate = delegate
+        self.passwordTextField.delegate = delegate
+    }
     
     //MARK: - Notificators
     
@@ -142,13 +148,7 @@ class LoginView: UIView {
         logInButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
         logInButton.backgroundColor = viewModel.buttonBackgroundColor
     }
-    //MARK: - Delegates
-    
-    public func configTextFieldDelegates(delegate: UITextFieldDelegate) {
-        self.loginTextField.delegate = delegate
-        self.passwordTextField.delegate = delegate
-    }
-    
+
     //MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -157,9 +157,8 @@ class LoginView: UIView {
         self.addSubview(self.stackView)
         self.addSubview(self.secondStackView)
         self.addSubview(self.noAccountButton)
-        
-        self.configConstraints()
         self.configureNotificators()
+        self.configConstraints()
         
     }
     
