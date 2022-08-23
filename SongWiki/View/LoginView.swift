@@ -29,11 +29,13 @@ class LoginView: UIView {
     
     lazy var loginTextField: UITextField = {
         let tf = CustomTF(placeholder: "Email", isSecure: false)
+        tf.keyboardType = .emailAddress
         return tf
     }()
     
     lazy var passwordTextField: UITextField = {
         let tf = CustomTF(placeholder: "Senha", isSecure: true)
+        tf.keyboardType = .default
         return tf
     }()
     
