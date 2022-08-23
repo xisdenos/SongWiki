@@ -18,8 +18,15 @@ class LoginController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.loginView.configTextFieldDelegates(delegate: self)
     }
     
+}
+
+extension LoginController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
 }
 

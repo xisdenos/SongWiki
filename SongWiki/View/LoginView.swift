@@ -9,6 +9,8 @@ import UIKit
 
 class LoginView: UIView {
     
+    var viewModel: LoginViewModel = LoginViewModel()
+    
     //MARK: - Components
     
     lazy var gradient: UIView =  {
@@ -27,11 +29,13 @@ class LoginView: UIView {
     
     lazy var loginTextField: UITextField = {
         let tf = CustomTF(placeholder: "Email", isSecure: false)
+        tf.keyboardType = .emailAddress
         return tf
     }()
     
     lazy var passwordTextField: UITextField = {
         let tf = CustomTF(placeholder: "Senha", isSecure: true)
+        tf.keyboardType = .default
         return tf
     }()
     
@@ -94,7 +98,6 @@ class LoginView: UIView {
         stack.addArrangedSubview(loginTextField)
         stack.addArrangedSubview(passwordTextField)
         stack.addArrangedSubview(logInButton)
-        
         stack.distribution = .fillEqually
         stack.isUserInteractionEnabled = true
         return stack
@@ -120,6 +123,32 @@ class LoginView: UIView {
         self.passwordTextField.delegate = delegate
     }
     
+    //MARK: - Notificators
+    
+    func configureNotificators() {
+        loginTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+    }
+    
+    //MARK: - OBJC functions
+    
+    @objc func textDidChange(_ sender: UITextField) {
+        if sender == loginTextField {
+            viewModel.email = sender.text
+        } else {
+            viewModel.password = sender.text
+        }
+        updateForm()
+    }
+    
+    //MARK: - Helpers
+    
+    private func updateForm() {
+        logInButton.isEnabled = viewModel.shouldEnableButton
+        logInButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
+        logInButton.backgroundColor = viewModel.buttonBackgroundColor
+    }
+
     //MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -128,7 +157,7 @@ class LoginView: UIView {
         self.addSubview(self.stackView)
         self.addSubview(self.secondStackView)
         self.addSubview(self.noAccountButton)
-        
+        self.configureNotificators()
         self.configConstraints()
         
     }
