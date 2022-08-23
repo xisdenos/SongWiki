@@ -9,6 +9,8 @@ import UIKit
 
 class LoginView: UIView {
     
+    var viewModel: LoginViewModel = LoginViewModel()
+    
     //MARK: - Components
     
     lazy var gradient: UIView =  {
@@ -113,6 +115,31 @@ class LoginView: UIView {
         return stack
     }()
     
+    //MARK: - Notificators
+    
+    func configureNotificators() {
+        loginTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+    }
+    
+    //MARK: - OBJC functions
+    
+    @objc func textDidChange(_ sender: UITextField) {
+        if sender == loginTextField {
+            viewModel.email = sender.text
+        } else {
+            viewModel.password = sender.text
+        }
+        updateForm()
+    }
+    
+    //MARK: - Helpers
+    
+    private func updateForm() {
+        logInButton.isEnabled = viewModel.shouldEnableButton
+        logInButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
+        logInButton.backgroundColor = viewModel.buttonBackgroundColor
+    }
     //MARK: - Delegates
     
     public func configTextFieldDelegates(delegate: UITextFieldDelegate) {
@@ -130,6 +157,7 @@ class LoginView: UIView {
         self.addSubview(self.noAccountButton)
         
         self.configConstraints()
+        self.configureNotificators()
         
     }
     

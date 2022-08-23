@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		062A3B3328B570F500F852A7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062A3B3228B570F500F852A7 /* LoginViewModel.swift */; };
+		062A3B3628B573EA00F852A7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062A3B3528B573EA00F852A7 /* LoginViewModel.swift */; };
 		0631DA9528B078E60099ACB6 /* Divider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631DA9428B078E60099ACB6 /* Divider.swift */; };
 		06459B7428AF57760054F510 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459B7328AF57760054F510 /* AppDelegate.swift */; };
 		06459B7628AF57760054F510 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459B7528AF57760054F510 /* SceneDelegate.swift */; };
@@ -42,7 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		062A3B3228B570F500F852A7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = ../../../Documents/LoginViewModel.swift; sourceTree = "<group>"; };
+		062A3B3528B573EA00F852A7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		0631DA9428B078E60099ACB6 /* Divider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Divider.swift; sourceTree = "<group>"; };
 		06459B7028AF57760054F510 /* SongWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SongWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06459B7328AF57760054F510 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		062A3B3428B573C100F852A7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				062A3B3528B573EA00F852A7 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		0631DA9628B07A1A0099ACB6 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,11 +126,11 @@
 		06459B7228AF57760054F510 /* SongWiki */ = {
 			isa = PBXGroup;
 			children = (
+				062A3B3428B573C100F852A7 /* ViewModel */,
 				0631DA9628B07A1A0099ACB6 /* Extension */,
 				06459BCD28B02ACC0054F510 /* Source */,
 				06459BCC28B02AB20054F510 /* Components */,
 				06459BCB28B02A840054F510 /* Controller */,
-				06459BCA28B02A790054F510 /* ViewModel */,
 				06459BC928B02A6B0054F510 /* View */,
 				06459B8428AF57780054F510 /* Info.plist */,
 				06459B7C28AF57760054F510 /* SongWiki.xcdatamodeld */,
@@ -153,14 +161,6 @@
 				06459BCE28B02AF60054F510 /* LoginView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		06459BCA28B02A790054F510 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				062A3B3228B570F500F852A7 /* LoginViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		06459BCB28B02A840054F510 /* Controller */ = {
@@ -331,7 +331,7 @@
 				06459BD728B06B1D0054F510 /* CustomTextField.swift in Sources */,
 				06459B7428AF57760054F510 /* AppDelegate.swift in Sources */,
 				06459BCF28B02AF60054F510 /* LoginView.swift in Sources */,
-				062A3B3328B570F500F852A7 /* LoginViewModel.swift in Sources */,
+				062A3B3628B573EA00F852A7 /* LoginViewModel.swift in Sources */,
 				06459B7628AF57760054F510 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
