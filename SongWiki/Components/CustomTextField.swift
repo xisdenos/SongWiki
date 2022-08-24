@@ -27,6 +27,9 @@ class CustomTF: UITextField {
         isSecureTextEntry = isSecure
         attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [.foregroundColor:UIColor(white: 1, alpha: 0.7)])
         layer.cornerRadius = 10
+        autocapitalizationType = .none
+        autocorrectionType = .no
+        
     }
     
     required init?(coder: NSCoder) {

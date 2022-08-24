@@ -18,8 +18,24 @@ class LoginController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         self.loginView.configTextFieldDelegates(delegate: self)
+
     }
+
+
+}
+
+extension LoginController:LoginViewProtocol{
+    func actionRegisterButton() {
+        let vc = RegisterVC()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func actionEsqueceuSenhaButton() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     
 }
 
