@@ -17,6 +17,7 @@ class AuthButton: UIButton {
         backgroundColor = .systemPurple.withAlphaComponent(0.5)
         setTitleColor(UIColor(white: 1, alpha: 0.40), for: .normal)
         setTitle(placeholder, for: .normal)
+        translatesAutoresizingMaskIntoConstraints = false
         
     }
     

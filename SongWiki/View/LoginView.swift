@@ -107,6 +107,7 @@ class LoginView: UIView {
         button.setAttributedTitle(attributedTitle, for: .normal)
         button.backgroundColor = UIColor(white: 1, alpha: 0)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(self.tappedRegisterButton), for: .touchUpInside)
         return button
     }()
     
