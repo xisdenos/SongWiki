@@ -8,6 +8,8 @@
 import UIKit
 
 class RegisterView: UIView {
+    
+    var viewModel: RegistrationViewModel = RegistrationViewModel()
 
     lazy var gradient: UIView =  {
         let view = GradientView(colors: [UIColor.systemPurple.cgColor, UIColor(red: 153/255, green: 0/255, blue: 51/255, alpha: 1).cgColor])
@@ -48,6 +50,37 @@ class RegisterView: UIView {
         return button
     }()
     
+    //MARK: - Notifications
+    
+    func configureNotificators() {
+        nameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        checkPasswordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+    }
+    
+    
+    //MARK: - OBJC functions
+    
+    @objc func textDidChange(_ sender: UITextField) {
+        switch sender {
+        case nameTextField: viewModel.user = sender.text
+        case emailTextField: viewModel.email = sender.text
+        case passwordTextField: viewModel.password = sender.text
+        case checkPasswordTextField: viewModel.passwordConfirmation = sender.text
+        default:
+            print("Deu ruim")
+        }
+        updateForm()
+    }
+    
+    //MARK: - Helpers
+    
+    private func updateForm() {
+        registerButton.isEnabled = viewModel.shouldEnableButton
+        registerButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
+        registerButton.backgroundColor = viewModel.buttonBackgroundColor
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -63,6 +96,7 @@ class RegisterView: UIView {
         self.addSubview(passwordTextField)
         self.addSubview(checkPasswordTextField)
         self.addSubview(registerButton)
+        self.configureNotificators()
     }
     
     required init?(coder: NSCoder) {
@@ -106,26 +140,6 @@ class RegisterView: UIView {
             self.registerButton.leadingAnchor.constraint(equalTo: self.checkPasswordTextField.leadingAnchor),
             self.registerButton.trailingAnchor.constraint(equalTo: self.checkPasswordTextField.trailingAnchor),
             self.registerButton.heightAnchor.constraint(equalTo: self.checkPasswordTextField.heightAnchor),
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-    
-            
-            
-            
-        
-        
-        
-        
-        ])
+                ])
     }
 }
-
