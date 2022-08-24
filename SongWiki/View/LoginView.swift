@@ -7,11 +7,27 @@
 
 import UIKit
 
+//criacao do protocolo -------------
+protocol LoginViewProtocol: AnyObject{
+    func actionRegisterButton()
+    func actionEsqueceuSenhaButton()
+}
+
 class LoginView: UIView {
     
+
     var viewModel: LoginViewModel = LoginViewModel()
     
     //MARK: - Components
+
+    // criacao do delgate  -----------------
+    private weak var delegate:LoginViewProtocol?
+    
+    // criacao da func do delegate -----------
+    func delegate(delegate:LoginViewProtocol?){
+        self.delegate = delegate
+    }
+
     
     lazy var gradient: UIView =  {
         let view = GradientView(colors: [UIColor.systemPurple.cgColor, UIColor(red: 153/255, green: 0/255, blue: 51/255, alpha: 1).cgColor])
@@ -44,6 +60,9 @@ class LoginView: UIView {
         button.isEnabled = false
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         button.translatesAutoresizingMaskIntoConstraints = false
+        
+        // Adicionando acao do botaoo ---------------------
+        button.addTarget(self, action: #selector(self.tappedLoginButton), for: .touchUpInside)
         return button
     }()
     
@@ -57,6 +76,9 @@ class LoginView: UIView {
         button.setAttributedTitle(attributedTitle, for: .normal)
         button.backgroundColor = UIColor(white: 1, alpha: 0)
         button.translatesAutoresizingMaskIntoConstraints = false
+
+        // Adicionando acao do botaoo ---------------------
+        button.addTarget(self, action: #selector(self.tappedEsqueceuSenhaButton), for: .touchUpInside)
         return button
     }()
     
@@ -116,6 +138,7 @@ class LoginView: UIView {
         return stack
     }()
     
+
     //MARK: - Delegates
     
     public func configTextFieldDelegates(delegate: UITextFieldDelegate) {
@@ -149,6 +172,7 @@ class LoginView: UIView {
         logInButton.backgroundColor = viewModel.buttonBackgroundColor
     }
 
+
     //MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -161,12 +185,27 @@ class LoginView: UIView {
         self.configConstraints()
         
     }
+    // Metedos de ativacao do botao ------------------------
+    
+    @objc private func tappedRegisterButton(){
+        print("Deu certo")
+        self.delegate?.actionRegisterButton()
+            }
+    @objc private func tappedLoginButton(){
+        print("Deu certo Login")
+            }
+    @objc private func tappedEsqueceuSenhaButton(){
+        print("Deu certo Senha")
+        self.delegate?.actionEsqueceuSenhaButton()
+            }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+
     //MARK: -Constraints
+
     private func configConstraints() {
         NSLayoutConstraint.activate([
             self.gradient.topAnchor.constraint(equalTo: self.topAnchor),
