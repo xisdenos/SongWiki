@@ -23,6 +23,7 @@
 		06459BD928B06E800054F510 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459BD828B06E800054F510 /* AuthButton.swift */; };
 		0675DA8828B6B7DF004882FB /* FieldValidationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0675DA8728B6B7DF004882FB /* FieldValidationProtocol.swift */; };
 		0675DA8A28B6B8CB004882FB /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0675DA8928B6B8CB004882FB /* RegistrationViewModel.swift */; };
+		0675DA8C28B6D732004882FB /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0675DA8B28B6D732004882FB /* BackButton.swift */; };
 		EB78760D28B1A7A00021B9DA /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB78760C28B1A7A00021B9DA /* RegisterController.swift */; };
 		EB78760F28B1A7BC0021B9DA /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB78760E28B1A7BC0021B9DA /* RegisterView.swift */; };
 		EBECD25C28B698BE00519F13 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBECD25B28B698BE00519F13 /* LoginViewModel.swift */; };
@@ -66,6 +67,7 @@
 		06459BD828B06E800054F510 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		0675DA8728B6B7DF004882FB /* FieldValidationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidationProtocol.swift; sourceTree = "<group>"; };
 		0675DA8928B6B8CB004882FB /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		0675DA8B28B6D732004882FB /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		EB78760C28B1A7A00021B9DA /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		EB78760E28B1A7BC0021B9DA /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		EBECD25B28B698BE00519F13 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				06459BD628B06B1D0054F510 /* CustomTextField.swift */,
 				06459BD828B06E800054F510 /* AuthButton.swift */,
 				0631DA9428B078E60099ACB6 /* Divider.swift */,
+				0675DA8B28B6D732004882FB /* BackButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				06459B7428AF57760054F510 /* AppDelegate.swift in Sources */,
 				06459BCF28B02AF60054F510 /* LoginView.swift in Sources */,
 				06459B7628AF57760054F510 /* SceneDelegate.swift in Sources */,
+				0675DA8C28B6D732004882FB /* BackButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

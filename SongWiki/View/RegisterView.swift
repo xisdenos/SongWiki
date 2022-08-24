@@ -7,14 +7,25 @@
 
 import UIKit
 
+protocol RegisterViewProtocol: AnyObject {
+    func backButtonPopNavigation()
+}
+
 class RegisterView: UIView {
     
-    var viewModel: RegistrationViewModel = RegistrationViewModel()
-
+    private var viewModel: RegistrationViewModel = RegistrationViewModel()
+    private weak var delegate: RegisterViewProtocol?
+    
     lazy var gradient: UIView =  {
         let view = GradientView(colors: [UIColor.systemPurple.cgColor, UIColor(red: 153/255, green: 0/255, blue: 51/255, alpha: 1).cgColor])
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
+    }()
+    
+    lazy var backButton: UIButton = {
+       let button = BackButton()
+        button.addTarget(self, action: #selector(backButtonControl), for: .touchUpInside)
+        return button
     }()
     
     lazy var iconImage: UIImageView = {
@@ -50,6 +61,12 @@ class RegisterView: UIView {
         return button
     }()
     
+    //MARK: - Delegates
+    
+    func delegate(delegate:RegisterViewProtocol?) {
+        self.delegate = delegate
+    }
+    
     //MARK: - Notifications
     
     func configureNotificators() {
@@ -74,6 +91,10 @@ class RegisterView: UIView {
         updateForm()
     }
     
+    @objc func backButtonControl() {
+        self.delegate?.backButtonPopNavigation()
+    }
+    
     //MARK: - Helpers
     
     private func updateForm() {
@@ -91,6 +112,7 @@ class RegisterView: UIView {
     func configSuperView(){
         self.addSubview(gradient)
         self.addSubview(iconImage)
+        self.addSubview(backButton)
         self.addSubview(nameTextField)
         self.addSubview(emailTextField)
         self.addSubview(passwordTextField)
@@ -110,6 +132,11 @@ class RegisterView: UIView {
             self.gradient.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             self.gradient.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.gradient.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            
+            self.backButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 50),
+            self.backButton.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            self.backButton.heightAnchor.constraint(equalToConstant: 50),
+            self.backButton.widthAnchor.constraint(equalToConstant: 30),
         
             self.iconImage.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor,constant: 30),
             self.iconImage.centerXAnchor.constraint(equalTo: self.centerXAnchor,constant: -10),
