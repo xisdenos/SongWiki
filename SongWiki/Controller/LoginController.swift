@@ -18,7 +18,7 @@ class LoginController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.loginView.delegate(delegate: self)
         self.loginView.configTextFieldDelegates(delegate: self)
 
     }
@@ -28,7 +28,7 @@ class LoginController: UIViewController {
 
 extension LoginController:LoginViewProtocol{
     func actionRegisterButton() {
-        let vc = RegisterVC()
+        let vc = RegisterController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
