@@ -23,11 +23,6 @@ class LoginView: UIView {
     // criacao do delgate  -----------------
     private weak var delegate:LoginViewProtocol?
     
-    // criacao da func do delegate -----------
-    func delegate(delegate:LoginViewProtocol?){
-        self.delegate = delegate
-    }
-
     
     lazy var gradient: UIView =  {
         let view = GradientView(colors: [UIColor.systemPurple.cgColor, UIColor(red: 153/255, green: 0/255, blue: 51/255, alpha: 1).cgColor])
@@ -147,6 +142,10 @@ class LoginView: UIView {
         self.passwordTextField.delegate = delegate
     }
     
+    func delegate(delegate:LoginViewProtocol?) {
+        self.delegate = delegate
+    }
+    
     //MARK: - Notificators
     
     func configureNotificators() {
@@ -164,6 +163,18 @@ class LoginView: UIView {
         }
         updateForm()
     }
+    
+    // Metedos de ativacao do botao ------------------------
+    
+    @objc private func tappedRegisterButton(){
+        self.delegate?.actionRegisterButton()
+            }
+    @objc private func tappedLoginButton(){
+        //To-Do
+            }
+    @objc private func tappedEsqueceuSenhaButton(){
+        self.delegate?.actionEsqueceuSenhaButton()
+            }
     
     //MARK: - Helpers
     
@@ -186,19 +197,7 @@ class LoginView: UIView {
         self.configConstraints()
         
     }
-    // Metedos de ativacao do botao ------------------------
     
-    @objc private func tappedRegisterButton(){
-        print("Deu certo")
-        self.delegate?.actionRegisterButton()
-            }
-    @objc private func tappedLoginButton(){
-        print("Deu certo Login")
-            }
-    @objc private func tappedEsqueceuSenhaButton(){
-        print("Deu certo Senha")
-        self.delegate?.actionEsqueceuSenhaButton()
-            }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

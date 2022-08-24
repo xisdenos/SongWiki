@@ -22,11 +22,11 @@ class LoginController: UIViewController {
         self.loginView.configTextFieldDelegates(delegate: self)
 
     }
-
-
 }
 
-extension LoginController:LoginViewProtocol{
+//MARK: - Extensions
+
+extension LoginController: LoginViewProtocol{
     func actionRegisterButton() {
         let vc = RegisterController()
         self.navigationController?.pushViewController(vc, animated: true)
@@ -35,8 +35,6 @@ extension LoginController:LoginViewProtocol{
     func actionEsqueceuSenhaButton() {
         self.navigationController?.popViewController(animated: true)
     }
-    
-    
 }
 
 extension LoginController: UITextFieldDelegate {
