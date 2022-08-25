@@ -8,7 +8,13 @@
 import Foundation
 import UIKit
 
+protocol ForgottenPasswordViewProtocol: AnyObject {
+    func actionForgottenPasswordButton()
+}
+
 class ForgottenPasswordView: UIView {
+    
+    private weak var delegate: ForgottenPasswordViewProtocol?
     
     lazy var gradient: GradientView = {
         let gradient = GradientView(colors: [UIColor.systemPurple.cgColor, UIColor(red: 153/255, green: 0/255, blue: 51/255, alpha: 1).cgColor])
@@ -41,6 +47,21 @@ class ForgottenPasswordView: UIView {
         return button
     }()
     
+    //MARK: - Delegate
+    
+    func configTextFieldDelegate(delegate: UITextFieldDelegate) {
+        forgottenTextField.delegate = delegate
+    }
+    
+    func configButtonDelegate(delegate: ForgottenPasswordViewProtocol?) {
+        self.delegate = delegate
+    }
+    
+    //MARK: - OBJC functions
+    
+    @objc func textDidChange(_ sender: UITextField) {
+        
+    }
     //MARK: - Initializer
     
     override init(frame: CGRect) {
