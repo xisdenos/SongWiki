@@ -15,13 +15,14 @@ struct RegistrationViewModel: FieldValidation {
     var password: String?
     var passwordConfirmation: String?
     
+    //MARK: - Validations
     var imputNotEmpty: Bool {
         return
-        email?.isEmpty == false &&
-        user?.isEmpty == false &&
-        password?.isEmpty == false &&
-        passwordConfirmation?.isEmpty == false &&
-        password == passwordConfirmation
+            email?.isEmpty == false &&
+            user?.isEmpty == false &&
+            password?.isEmpty == false &&
+            passwordConfirmation?.isEmpty == false &&
+            password == passwordConfirmation
     }
     
     var shouldEnableButton: Bool {
