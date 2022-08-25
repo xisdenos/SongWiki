@@ -12,6 +12,8 @@ struct ForgottenPasswordViewModel: FieldValidation {
     
     var email: String?
     
+    //MARK: - Validations
+    
     var imputNotEmpty: Bool {
         return email?.isEmpty == false
     }
@@ -27,6 +29,4 @@ struct ForgottenPasswordViewModel: FieldValidation {
     var buttonBackgroundColor: UIColor {
         return imputNotEmpty ? .systemPurple : .systemPurple.withAlphaComponent(0.5)
     }
-    
-    
 }

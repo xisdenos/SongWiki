@@ -166,9 +166,7 @@
 		06459BC928B02A6B0054F510 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				06459BCE28B02AF60054F510 /* LoginView.swift */,
-				EB78760E28B1A7BC0021B9DA /* RegisterView.swift */,
-				0675DA8F28B700AB004882FB /* ForgottenPasswordView.swift */,
+				0675DA9328B71571004882FB /* LoginCycle */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -184,9 +182,7 @@
 		06459BCB28B02A840054F510 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				06459B7728AF57760054F510 /* LoginController.swift */,
-				EB78760C28B1A7A00021B9DA /* RegisterController.swift */,
-				0675DA8D28B70039004882FB /* ForgottenPasswordController.swift */,
+				0675DA9428B71583004882FB /* LoginCycle */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -231,6 +227,26 @@
 				0675DA8728B6B7DF004882FB /* FieldValidationProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		0675DA9328B71571004882FB /* LoginCycle */ = {
+			isa = PBXGroup;
+			children = (
+				06459BCE28B02AF60054F510 /* LoginView.swift */,
+				EB78760E28B1A7BC0021B9DA /* RegisterView.swift */,
+				0675DA8F28B700AB004882FB /* ForgottenPasswordView.swift */,
+			);
+			path = LoginCycle;
+			sourceTree = "<group>";
+		};
+		0675DA9428B71583004882FB /* LoginCycle */ = {
+			isa = PBXGroup;
+			children = (
+				06459B7728AF57760054F510 /* LoginController.swift */,
+				EB78760C28B1A7A00021B9DA /* RegisterController.swift */,
+				0675DA8D28B70039004882FB /* ForgottenPasswordController.swift */,
+			);
+			path = LoginCycle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -9,17 +9,25 @@ import Foundation
 import UIKit
 
 protocol ForgottenPasswordViewProtocol: AnyObject {
-    func actionForgottenPasswordButton()
+//    func actionForgottenPasswordButton()
+    func backButtonPopNavigation()
 }
 
 class ForgottenPasswordView: UIView {
     
+    private var viewModel: ForgottenPasswordViewModel = ForgottenPasswordViewModel()
     private weak var delegate: ForgottenPasswordViewProtocol?
     
     lazy var gradient: GradientView = {
         let gradient = GradientView(colors: [UIColor.systemPurple.cgColor, UIColor(red: 153/255, green: 0/255, blue: 51/255, alpha: 1).cgColor])
         gradient.translatesAutoresizingMaskIntoConstraints = false
         return gradient
+    }()
+    
+    lazy var backButton: UIButton = {
+       let button = BackButton()
+        button.addTarget(self, action: #selector(backButtonControl), for: .touchUpInside)
+        return button
     }()
     
     lazy var iconImage: UIImageView = {
@@ -42,7 +50,7 @@ class ForgottenPasswordView: UIView {
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         button.translatesAutoresizingMaskIntoConstraints = false
         
-        // Adicionando acao do botaoo ---------------------
+// Future forgotten button action
 //        button.addTarget(self, action: #selector(self.tappedLoginButton), for: .touchUpInside)
         return button
     }()
@@ -57,10 +65,29 @@ class ForgottenPasswordView: UIView {
         self.delegate = delegate
     }
     
+    //MARK: - Notificator
+    
+    func configureNotificators() {
+        forgottenTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+    }
+    
     //MARK: - OBJC functions
     
     @objc func textDidChange(_ sender: UITextField) {
-        
+        viewModel.email = sender.text
+        updateForm()
+    }
+    
+    @objc func backButtonControl() {
+        self.delegate?.backButtonPopNavigation()
+    }
+    
+    //MARK: - Helper
+    
+    private func updateForm() {
+        forgottenButton.isEnabled = viewModel.shouldEnableButton
+        forgottenButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
+        forgottenButton.backgroundColor = viewModel.buttonBackgroundColor
     }
     //MARK: - Initializer
     
@@ -70,7 +97,9 @@ class ForgottenPasswordView: UIView {
         self.addSubview(self.iconImage)
         self.addSubview(self.forgottenTextField)
         self.addSubview(self.forgottenButton)
+        self.addSubview(self.backButton)
         self.configConstraints()
+        self.configureNotificators()
     }
     
     required init?(coder: NSCoder) {
@@ -85,6 +114,11 @@ class ForgottenPasswordView: UIView {
             self.gradient.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             self.gradient.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.gradient.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            
+            self.backButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 50),
+            self.backButton.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            self.backButton.heightAnchor.constraint(equalToConstant: 50),
+            self.backButton.widthAnchor.constraint(equalToConstant: 30),
             
             self.iconImage.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -10),
             self.iconImage.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 32),
