@@ -24,6 +24,8 @@
 		0675DA8828B6B7DF004882FB /* FieldValidationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0675DA8728B6B7DF004882FB /* FieldValidationProtocol.swift */; };
 		0675DA8A28B6B8CB004882FB /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0675DA8928B6B8CB004882FB /* RegistrationViewModel.swift */; };
 		0675DA8C28B6D732004882FB /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0675DA8B28B6D732004882FB /* BackButton.swift */; };
+		0675DA8E28B70039004882FB /* ForgottenPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0675DA8D28B70039004882FB /* ForgottenPasswordController.swift */; };
+		0675DA9028B700AB004882FB /* ForgottenPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0675DA8F28B700AB004882FB /* ForgottenPasswordView.swift */; };
 		EB78760D28B1A7A00021B9DA /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB78760C28B1A7A00021B9DA /* RegisterController.swift */; };
 		EB78760F28B1A7BC0021B9DA /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB78760E28B1A7BC0021B9DA /* RegisterView.swift */; };
 		EBECD25C28B698BE00519F13 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBECD25B28B698BE00519F13 /* LoginViewModel.swift */; };
@@ -68,6 +70,8 @@
 		0675DA8728B6B7DF004882FB /* FieldValidationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidationProtocol.swift; sourceTree = "<group>"; };
 		0675DA8928B6B8CB004882FB /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		0675DA8B28B6D732004882FB /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		0675DA8D28B70039004882FB /* ForgottenPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgottenPasswordController.swift; sourceTree = "<group>"; };
+		0675DA8F28B700AB004882FB /* ForgottenPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgottenPasswordView.swift; sourceTree = "<group>"; };
 		EB78760C28B1A7A00021B9DA /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		EB78760E28B1A7BC0021B9DA /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		EBECD25B28B698BE00519F13 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 			children = (
 				06459BCE28B02AF60054F510 /* LoginView.swift */,
 				EB78760E28B1A7BC0021B9DA /* RegisterView.swift */,
+				0675DA8F28B700AB004882FB /* ForgottenPasswordView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 			children = (
 				06459B7728AF57760054F510 /* LoginController.swift */,
 				EB78760C28B1A7A00021B9DA /* RegisterController.swift */,
+				0675DA8D28B70039004882FB /* ForgottenPasswordController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -355,12 +361,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB78760F28B1A7BC0021B9DA /* RegisterView.swift in Sources */,
+				0675DA8E28B70039004882FB /* ForgottenPasswordController.swift in Sources */,
 				EB78760D28B1A7A00021B9DA /* RegisterController.swift in Sources */,
 				06459B7E28AF57760054F510 /* SongWiki.xcdatamodeld in Sources */,
 				0675DA8A28B6B8CB004882FB /* RegistrationViewModel.swift in Sources */,
 				06459BD928B06E800054F510 /* AuthButton.swift in Sources */,
 				0675DA8828B6B7DF004882FB /* FieldValidationProtocol.swift in Sources */,
 				06459B7828AF57760054F510 /* LoginController.swift in Sources */,
+				0675DA9028B700AB004882FB /* ForgottenPasswordView.swift in Sources */,
 				0631DA9528B078E60099ACB6 /* Divider.swift in Sources */,
 				06459BD328B055130054F510 /* Gradient.swift in Sources */,
 				06459BD728B06B1D0054F510 /* CustomTextField.swift in Sources */,
