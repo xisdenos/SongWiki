@@ -13,6 +13,8 @@ struct LoginViewModel: FieldValidation {
     var email: String?
     var password: String?
     
+    //MARK: - Validations
+    
     var imputNotEmpty: Bool {
         return email?.isEmpty == false &&
                password?.isEmpty == false
