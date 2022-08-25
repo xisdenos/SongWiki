@@ -67,6 +67,13 @@ class RegisterView: UIView {
         self.delegate = delegate
     }
     
+    func configTextFieldDelegates(delegate: UITextFieldDelegate) {
+        self.nameTextField.delegate = delegate
+        self.emailTextField.delegate = delegate
+        self.passwordTextField.delegate = delegate
+        self.checkPasswordTextField.delegate = delegate
+    }
+    
     //MARK: - Notifications
     
     func configureNotificators() {

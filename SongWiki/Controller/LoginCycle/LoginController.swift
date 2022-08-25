@@ -28,12 +28,13 @@ class LoginController: UIViewController {
 
 extension LoginController: LoginViewProtocol{
     func actionRegisterButton() {
-        let vc = RegisterController()
+        let vc: RegisterController = RegisterController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func actionEsqueceuSenhaButton() {
-        self.navigationController?.popViewController(animated: true)
+        let vc: ForgottenPasswordController = ForgottenPasswordController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

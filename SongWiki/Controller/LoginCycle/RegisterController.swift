@@ -20,12 +20,17 @@ class RegisterController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)
         self.registerView?.delegate(delegate: self)
+        self.registerView?.configTextFieldDelegates(delegate: self)
     }
 }
 
-extension RegisterController: RegisterViewProtocol {
+extension RegisterController: RegisterViewProtocol, UITextFieldDelegate {
     
     func backButtonPopNavigation() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
     }
 }
