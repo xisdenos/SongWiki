@@ -9,16 +9,27 @@ import UIKit
 
 class LoginController: UIViewController {
     
+    var changeToForgottenPasswordScreen: (() -> Void)?
+    var changeToRegisterScreen: (() -> Void)?
     var loginView: LoginView = LoginView()
     
     override func loadView() {
         super.loadView()
         self.view = loginView
+        
+        loginView.changeToRegisterScreen = { [weak self] in
+            guard let self = self else { return }
+            self.changeToRegisterScreen?()
+        }
+        
+        loginView.changeToForgottenPasswordScreen = { [weak self] in
+            guard let self = self else { return }
+            self.changeToForgottenPasswordScreen?()
+        }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loginView.delegate(delegate: self)
         self.loginView.configTextFieldDelegates(delegate: self)
 
     }
@@ -26,17 +37,6 @@ class LoginController: UIViewController {
 
 //MARK: - Extensions
 
-extension LoginController: LoginViewProtocol{
-    func actionRegisterButton() {
-        let vc: RegisterController = RegisterController()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func actionEsqueceuSenhaButton() {
-        let vc: ForgottenPasswordController = ForgottenPasswordController()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-}
 
 extension LoginController: UITextFieldDelegate {
     

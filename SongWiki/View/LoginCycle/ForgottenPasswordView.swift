@@ -8,15 +8,11 @@
 import Foundation
 import UIKit
 
-protocol ForgottenPasswordViewProtocol: AnyObject {
-//    func actionForgottenPasswordButton()
-    func backButtonPopNavigation()
-}
-
 class ForgottenPasswordView: UIView {
     
+    public var backButtonPopNavigation: (() -> Void)?
     private var viewModel: ForgottenPasswordViewModel = ForgottenPasswordViewModel()
-    private weak var delegate: ForgottenPasswordViewProtocol?
+    
     
     lazy var gradient: GradientView = {
         let gradient = GradientView(colors: [UIColor.systemPurple.cgColor, UIColor(red: 153/255, green: 0/255, blue: 51/255, alpha: 1).cgColor])
@@ -61,9 +57,6 @@ class ForgottenPasswordView: UIView {
         forgottenTextField.delegate = delegate
     }
     
-    func configButtonDelegate(delegate: ForgottenPasswordViewProtocol?) {
-        self.delegate = delegate
-    }
     
     //MARK: - Notificator
     
@@ -79,7 +72,7 @@ class ForgottenPasswordView: UIView {
     }
     
     @objc func backButtonControl() {
-        self.delegate?.backButtonPopNavigation()
+        self.backButtonPopNavigation?()
     }
     
     //MARK: - Helper

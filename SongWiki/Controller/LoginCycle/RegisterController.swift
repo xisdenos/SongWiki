@@ -9,26 +9,26 @@ import UIKit
 
 class RegisterController: UIViewController {
 
-    var registerView:RegisterView?
+    public var backButtonPopNavigation: (() -> Void)?
+    public var registerView:RegisterView = RegisterView()
     
     override func loadView() {
-        self.registerView = RegisterView()
         self.view = self.registerView
+        
+        registerView.backButtonPopNavigation = { [weak self] in
+            guard let self = self else { return }
+            self.backButtonPopNavigation?()
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)
-        self.registerView?.delegate(delegate: self)
-        self.registerView?.configTextFieldDelegates(delegate: self)
+        self.registerView.configTextFieldDelegates(delegate: self)
     }
 }
 
-extension RegisterController: RegisterViewProtocol, UITextFieldDelegate {
-    
-    func backButtonPopNavigation() {
-        self.navigationController?.popViewController(animated: true)
-    }
+extension RegisterController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

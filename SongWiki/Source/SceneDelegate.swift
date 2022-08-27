@@ -24,7 +24,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let coordinator: LoginCoordinator = LoginCoordinator(navigationController: navVC)
         coordinator.start()
-        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

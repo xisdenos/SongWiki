@@ -7,22 +7,15 @@
 
 import UIKit
 
-//criacao do protocolo -------------
-protocol LoginViewProtocol: AnyObject{
-    func actionRegisterButton()
-    func actionEsqueceuSenhaButton()
-}
+
 
 class LoginView: UIView {
     
-
+    var changeToForgottenPasswordScreen: (() -> Void)?
+    var changeToRegisterScreen: (() -> Void)?
     var viewModel: LoginViewModel = LoginViewModel()
     
     //MARK: - Components
-
-    // criacao do delgate  -----------------
-    private weak var delegate:LoginViewProtocol?
-    
     
     lazy var gradient: UIView =  {
         let view = GradientView(colors: [UIColor.systemPurple.cgColor, UIColor(red: 153/255, green: 0/255, blue: 51/255, alpha: 1).cgColor])
@@ -142,9 +135,6 @@ class LoginView: UIView {
         self.passwordTextField.delegate = delegate
     }
     
-    func delegate(delegate:LoginViewProtocol?) {
-        self.delegate = delegate
-    }
     
     //MARK: - Notificators
     
@@ -167,13 +157,13 @@ class LoginView: UIView {
     // Metedos de ativacao do botao ------------------------
     
     @objc private func tappedRegisterButton(){
-        self.delegate?.actionRegisterButton()
+        changeToRegisterScreen?()
             }
     @objc private func tappedLoginButton(){
         //To-Do
             }
     @objc private func tappedEsqueceuSenhaButton(){
-        self.delegate?.actionEsqueceuSenhaButton()
+        changeToForgottenPasswordScreen?()
             }
     
     //MARK: - Helpers
