@@ -17,8 +17,25 @@ class LoginCoordinator: Coordinator {
     
     func start() {
         let viewController: LoginController = LoginController()
+        
+        viewController.changeToRegisterScreen = {
+            self.startRegisterScreen()
+        }
+        
+        viewController.changeToForgottenPasswordScreen = {
+            self.startForgottenPasswordScreen()
+        }
+        
         self.navigationController.pushViewController(viewController, animated: true)
     }
     
+    private func startRegisterScreen() {
+        let coordinator: RegisterCoordinator = RegisterCoordinator(navigationController: navigationController)
+        coordinator.start()
+    }
     
+    private func startForgottenPasswordScreen() {
+        let coordinator: ForgottenPasswordCoordinator = ForgottenPasswordCoordinator(navigationController: navigationController)
+        coordinator.start()
+    }
 }

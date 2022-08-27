@@ -10,29 +10,29 @@ import UIKit
 
 class ForgottenPasswordController: UIViewController {
     
-    var forgottenPasswordView: ForgottenPasswordView?
+    public var backButtonPopNavigation: (() -> Void)?
+    public var forgottenPasswordView: ForgottenPasswordView = ForgottenPasswordView()
     
     override func loadView() {
         super.loadView()
-        self.forgottenPasswordView = ForgottenPasswordView()
         self.view = forgottenPasswordView
+        
+        forgottenPasswordView.backButtonPopNavigation = { [weak self] in
+            guard let self = self else { return }
+            self.backButtonPopNavigation?()
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)
-        self.forgottenPasswordView?.configTextFieldDelegate(delegate: self)
-        self.forgottenPasswordView?.configButtonDelegate(delegate: self)
+        self.forgottenPasswordView.configTextFieldDelegate(delegate: self)
     }
 }
 
-extension ForgottenPasswordController: UITextFieldDelegate, ForgottenPasswordViewProtocol {
+extension ForgottenPasswordController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-    }
-    
-    func backButtonPopNavigation() {
-        self.navigationController?.popViewController(animated: true)
     }
 }

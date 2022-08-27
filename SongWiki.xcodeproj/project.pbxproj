@@ -142,15 +142,15 @@
 		06459B7228AF57760054F510 /* SongWiki */ = {
 			isa = PBXGroup;
 			children = (
+				06459B8428AF57780054F510 /* Info.plist */,
+				06459B7C28AF57760054F510 /* SongWiki.xcdatamodeld */,
+				06459BCC28B02AB20054F510 /* Components */,
+				06459BCB28B02A840054F510 /* Controller */,
 				06DBCE8A28B9A9E300F27935 /* Coordinator */,
 				0631DA9628B07A1A0099ACB6 /* Extension */,
 				06459BCD28B02ACC0054F510 /* Source */,
-				06459BCC28B02AB20054F510 /* Components */,
-				06459BCB28B02A840054F510 /* Controller */,
-				06459BCA28B02A790054F510 /* ViewModel */,
 				06459BC928B02A6B0054F510 /* View */,
-				06459B8428AF57780054F510 /* Info.plist */,
-				06459B7C28AF57760054F510 /* SongWiki.xcdatamodeld */,
+				06459BCA28B02A790054F510 /* ViewModel */,
 			);
 			path = SongWiki;
 			sourceTree = "<group>";
