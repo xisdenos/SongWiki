@@ -31,6 +31,7 @@
 		06DBCE8F28B9BF6E00F27935 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DBCE8E28B9BF6E00F27935 /* LoginCoordinator.swift */; };
 		06DBCE9128B9FAFF00F27935 /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DBCE9028B9FAFF00F27935 /* RegisterCoordinator.swift */; };
 		06DBCE9328B9FB0F00F27935 /* ForgottenPasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DBCE9228B9FB0F00F27935 /* ForgottenPasswordCoordinator.swift */; };
+		06DBCE9728BAE06100F27935 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DBCE9628BAE06100F27935 /* TabBarCoordinator.swift */; };
 		EB78760D28B1A7A00021B9DA /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB78760C28B1A7A00021B9DA /* RegisterController.swift */; };
 		EB78760F28B1A7BC0021B9DA /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB78760E28B1A7BC0021B9DA /* RegisterView.swift */; };
 		EBECD25C28B698BE00519F13 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBECD25B28B698BE00519F13 /* LoginViewModel.swift */; };
@@ -82,6 +83,7 @@
 		06DBCE8E28B9BF6E00F27935 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		06DBCE9028B9FAFF00F27935 /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
 		06DBCE9228B9FB0F00F27935 /* ForgottenPasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgottenPasswordCoordinator.swift; sourceTree = "<group>"; };
+		06DBCE9628BAE06100F27935 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		EB78760C28B1A7A00021B9DA /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		EB78760E28B1A7BC0021B9DA /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		EBECD25B28B698BE00519F13 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 		06459BCB28B02A840054F510 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				06DBCE9528BAE01F00F27935 /* TabBar */,
 				0675DA9428B71583004882FB /* LoginCycle */,
 			);
 			path = Controller;
@@ -261,8 +264,9 @@
 		06DBCE8A28B9A9E300F27935 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				06DBCE8D28B9BF4600F27935 /* LoginCycle */,
 				06DBCE8B28B9A9FA00F27935 /* CoordinatorProtocol.swift */,
+				06DBCE9428BAE00C00F27935 /* TabBar */,
+				06DBCE8D28B9BF4600F27935 /* LoginCycle */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -275,6 +279,21 @@
 				06DBCE9228B9FB0F00F27935 /* ForgottenPasswordCoordinator.swift */,
 			);
 			path = LoginCycle;
+			sourceTree = "<group>";
+		};
+		06DBCE9428BAE00C00F27935 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				06DBCE9628BAE06100F27935 /* TabBarCoordinator.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		06DBCE9528BAE01F00F27935 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,6 +430,7 @@
 				0675DA8E28B70039004882FB /* ForgottenPasswordController.swift in Sources */,
 				06DBCE8F28B9BF6E00F27935 /* LoginCoordinator.swift in Sources */,
 				EB78760D28B1A7A00021B9DA /* RegisterController.swift in Sources */,
+				06DBCE9728BAE06100F27935 /* TabBarCoordinator.swift in Sources */,
 				06459B7E28AF57760054F510 /* SongWiki.xcdatamodeld in Sources */,
 				0675DA8A28B6B8CB004882FB /* RegistrationViewModel.swift in Sources */,
 				06459BD928B06E800054F510 /* AuthButton.swift in Sources */,
