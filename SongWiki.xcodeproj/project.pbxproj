@@ -28,6 +28,7 @@
 		0675DA9028B700AB004882FB /* ForgottenPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0675DA8F28B700AB004882FB /* ForgottenPasswordView.swift */; };
 		0675DA9228B7128D004882FB /* ForgottenPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0675DA9128B7128D004882FB /* ForgottenPasswordViewModel.swift */; };
 		06DBCE8C28B9A9FA00F27935 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DBCE8B28B9A9FA00F27935 /* CoordinatorProtocol.swift */; };
+		06DBCE8F28B9BF6E00F27935 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DBCE8E28B9BF6E00F27935 /* LoginCoordinator.swift */; };
 		EB78760D28B1A7A00021B9DA /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB78760C28B1A7A00021B9DA /* RegisterController.swift */; };
 		EB78760F28B1A7BC0021B9DA /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB78760E28B1A7BC0021B9DA /* RegisterView.swift */; };
 		EBECD25C28B698BE00519F13 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBECD25B28B698BE00519F13 /* LoginViewModel.swift */; };
@@ -76,6 +77,7 @@
 		0675DA8F28B700AB004882FB /* ForgottenPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgottenPasswordView.swift; sourceTree = "<group>"; };
 		0675DA9128B7128D004882FB /* ForgottenPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgottenPasswordViewModel.swift; sourceTree = "<group>"; };
 		06DBCE8B28B9A9FA00F27935 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
+		06DBCE8E28B9BF6E00F27935 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		EB78760C28B1A7A00021B9DA /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		EB78760E28B1A7BC0021B9DA /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		EBECD25B28B698BE00519F13 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -255,9 +257,18 @@
 		06DBCE8A28B9A9E300F27935 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				06DBCE8D28B9BF4600F27935 /* LoginCycle */,
 				06DBCE8B28B9A9FA00F27935 /* CoordinatorProtocol.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		06DBCE8D28B9BF4600F27935 /* LoginCycle */ = {
+			isa = PBXGroup;
+			children = (
+				06DBCE8E28B9BF6E00F27935 /* LoginCoordinator.swift */,
+			);
+			path = LoginCycle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,6 +403,7 @@
 			files = (
 				EB78760F28B1A7BC0021B9DA /* RegisterView.swift in Sources */,
 				0675DA8E28B70039004882FB /* ForgottenPasswordController.swift in Sources */,
+				06DBCE8F28B9BF6E00F27935 /* LoginCoordinator.swift in Sources */,
 				EB78760D28B1A7A00021B9DA /* RegisterController.swift in Sources */,
 				06459B7E28AF57760054F510 /* SongWiki.xcdatamodeld in Sources */,
 				0675DA8A28B6B8CB004882FB /* RegistrationViewModel.swift in Sources */,
