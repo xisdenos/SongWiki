@@ -16,6 +16,12 @@ class TabBarCoordinator: Coordinator {
     }
     
     func start() {
+        let tabBarController: TabBarController = TabBarController()
         
+        let homeCoordinator = HomeCoordinator(navigationController: self.navigationController)
+        let searchCoordinator = SearchCoordinator(navigationController: self.navigationController)
+        
+        tabBarController.setViewControllers([homeCoordinator.homeViewController, searchCoordinator.searchViewController], animated: true)
+        self.navigationController.pushViewController(tabBarController, animated: true)
     }
 }

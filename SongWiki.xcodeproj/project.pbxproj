@@ -32,6 +32,11 @@
 		06DBCE9128B9FAFF00F27935 /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DBCE9028B9FAFF00F27935 /* RegisterCoordinator.swift */; };
 		06DBCE9328B9FB0F00F27935 /* ForgottenPasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DBCE9228B9FB0F00F27935 /* ForgottenPasswordCoordinator.swift */; };
 		06DBCE9728BAE06100F27935 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DBCE9628BAE06100F27935 /* TabBarCoordinator.swift */; };
+		06DBCE9B28BAE14A00F27935 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DBCE9A28BAE14A00F27935 /* HomeViewController.swift */; };
+		06DBCE9D28BAE17100F27935 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DBCE9C28BAE17100F27935 /* SearchViewController.swift */; };
+		06DBCE9F28BAE19400F27935 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DBCE9E28BAE19400F27935 /* HomeCoordinator.swift */; };
+		06DBCEA128BAE1A600F27935 /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DBCEA028BAE1A600F27935 /* SearchCoordinator.swift */; };
+		06DBCEA328BAE1F000F27935 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DBCEA228BAE1EF00F27935 /* TabBarController.swift */; };
 		EB78760D28B1A7A00021B9DA /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB78760C28B1A7A00021B9DA /* RegisterController.swift */; };
 		EB78760F28B1A7BC0021B9DA /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB78760E28B1A7BC0021B9DA /* RegisterView.swift */; };
 		EBECD25C28B698BE00519F13 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBECD25B28B698BE00519F13 /* LoginViewModel.swift */; };
@@ -84,6 +89,11 @@
 		06DBCE9028B9FAFF00F27935 /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
 		06DBCE9228B9FB0F00F27935 /* ForgottenPasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgottenPasswordCoordinator.swift; sourceTree = "<group>"; };
 		06DBCE9628BAE06100F27935 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		06DBCE9A28BAE14A00F27935 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		06DBCE9C28BAE17100F27935 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		06DBCE9E28BAE19400F27935 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		06DBCEA028BAE1A600F27935 /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
+		06DBCEA228BAE1EF00F27935 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		EB78760C28B1A7A00021B9DA /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		EB78760E28B1A7BC0021B9DA /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		EBECD25B28B698BE00519F13 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -193,6 +203,7 @@
 		06459BCB28B02A840054F510 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				06DBCE9928BAE10C00F27935 /* Product */,
 				06DBCE9528BAE01F00F27935 /* TabBar */,
 				0675DA9428B71583004882FB /* LoginCycle */,
 			);
@@ -264,6 +275,7 @@
 		06DBCE8A28B9A9E300F27935 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				06DBCE9828BAE0FA00F27935 /* Product */,
 				06DBCE8B28B9A9FA00F27935 /* CoordinatorProtocol.swift */,
 				06DBCE9428BAE00C00F27935 /* TabBar */,
 				06DBCE8D28B9BF4600F27935 /* LoginCycle */,
@@ -292,8 +304,27 @@
 		06DBCE9528BAE01F00F27935 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				06DBCEA228BAE1EF00F27935 /* TabBarController.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		06DBCE9828BAE0FA00F27935 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				06DBCE9E28BAE19400F27935 /* HomeCoordinator.swift */,
+				06DBCEA028BAE1A600F27935 /* SearchCoordinator.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		06DBCE9928BAE10C00F27935 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				06DBCE9A28BAE14A00F27935 /* HomeViewController.swift */,
+				06DBCE9C28BAE17100F27935 /* SearchViewController.swift */,
+			);
+			path = Product;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -430,6 +461,7 @@
 				0675DA8E28B70039004882FB /* ForgottenPasswordController.swift in Sources */,
 				06DBCE8F28B9BF6E00F27935 /* LoginCoordinator.swift in Sources */,
 				EB78760D28B1A7A00021B9DA /* RegisterController.swift in Sources */,
+				06DBCEA128BAE1A600F27935 /* SearchCoordinator.swift in Sources */,
 				06DBCE9728BAE06100F27935 /* TabBarCoordinator.swift in Sources */,
 				06459B7E28AF57760054F510 /* SongWiki.xcdatamodeld in Sources */,
 				0675DA8A28B6B8CB004882FB /* RegistrationViewModel.swift in Sources */,
@@ -437,16 +469,20 @@
 				0675DA8828B6B7DF004882FB /* FieldValidationProtocol.swift in Sources */,
 				06459B7828AF57760054F510 /* LoginController.swift in Sources */,
 				0675DA9028B700AB004882FB /* ForgottenPasswordView.swift in Sources */,
+				06DBCE9B28BAE14A00F27935 /* HomeViewController.swift in Sources */,
 				0631DA9528B078E60099ACB6 /* Divider.swift in Sources */,
 				0675DA9228B7128D004882FB /* ForgottenPasswordViewModel.swift in Sources */,
 				06DBCE9328B9FB0F00F27935 /* ForgottenPasswordCoordinator.swift in Sources */,
+				06DBCE9D28BAE17100F27935 /* SearchViewController.swift in Sources */,
 				06459BD328B055130054F510 /* Gradient.swift in Sources */,
 				06459BD728B06B1D0054F510 /* CustomTextField.swift in Sources */,
 				06DBCE8C28B9A9FA00F27935 /* CoordinatorProtocol.swift in Sources */,
 				EBECD25C28B698BE00519F13 /* LoginViewModel.swift in Sources */,
 				06459B7428AF57760054F510 /* AppDelegate.swift in Sources */,
+				06DBCE9F28BAE19400F27935 /* HomeCoordinator.swift in Sources */,
 				06DBCE9128B9FAFF00F27935 /* RegisterCoordinator.swift in Sources */,
 				06459BCF28B02AF60054F510 /* LoginView.swift in Sources */,
+				06DBCEA328BAE1F000F27935 /* TabBarController.swift in Sources */,
 				06459B7628AF57760054F510 /* SceneDelegate.swift in Sources */,
 				0675DA8C28B6D732004882FB /* BackButton.swift in Sources */,
 			);
