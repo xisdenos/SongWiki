@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 class LoginView: UIView {
     
     var changeToForgottenPasswordScreen: (() -> Void)?
