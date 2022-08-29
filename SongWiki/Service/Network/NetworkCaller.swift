@@ -36,7 +36,7 @@ final class NetworkCaller: NetworkCallerProtocol {
             }
             
             guard let data = data else {
-                completion(.failure(NetworkError.invalidStatusCode))
+                completion(.failure(NetworkError.noData))
                 return
             }
             

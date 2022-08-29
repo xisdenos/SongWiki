@@ -30,6 +30,9 @@
 		06BFCF7328BC28EA00567240 /* NetworkCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BFCF7228BC28EA00567240 /* NetworkCaller.swift */; };
 		06BFCF7528BC291100567240 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BFCF7428BC291100567240 /* NetworkRequest.swift */; };
 		06BFCF7928BC584400567240 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BFCF7828BC584400567240 /* NetworkError.swift */; };
+		06BFCF7D28BC7F0A00567240 /* GenericAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BFCF7C28BC7F0A00567240 /* GenericAdapter.swift */; };
+		06BFCF7F28BC818200567240 /* AdapterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BFCF7E28BC818200567240 /* AdapterError.swift */; };
+		06BFCF8228BC9E7700567240 /* TopAlbumsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BFCF8128BC9E7700567240 /* TopAlbumsModel.swift */; };
 		06DBCE8C28B9A9FA00F27935 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DBCE8B28B9A9FA00F27935 /* CoordinatorProtocol.swift */; };
 		06DBCE8F28B9BF6E00F27935 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DBCE8E28B9BF6E00F27935 /* LoginCoordinator.swift */; };
 		06DBCE9128B9FAFF00F27935 /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DBCE9028B9FAFF00F27935 /* RegisterCoordinator.swift */; };
@@ -90,6 +93,9 @@
 		06BFCF7228BC28EA00567240 /* NetworkCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCaller.swift; sourceTree = "<group>"; };
 		06BFCF7428BC291100567240 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		06BFCF7828BC584400567240 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		06BFCF7C28BC7F0A00567240 /* GenericAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericAdapter.swift; sourceTree = "<group>"; };
+		06BFCF7E28BC818200567240 /* AdapterError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterError.swift; sourceTree = "<group>"; };
+		06BFCF8128BC9E7700567240 /* TopAlbumsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAlbumsModel.swift; sourceTree = "<group>"; };
 		06DBCE8B28B9A9FA00F27935 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		06DBCE8E28B9BF6E00F27935 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		06DBCE9028B9FAFF00F27935 /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
@@ -160,6 +166,7 @@
 		06459B7228AF57760054F510 /* SongWiki */ = {
 			isa = PBXGroup;
 			children = (
+				06BFCF8028BC9DCB00567240 /* Model */,
 				06459B7C28AF57760054F510 /* SongWiki.xcdatamodeld */,
 				06459B8428AF57780054F510 /* Info.plist */,
 				06459BCC28B02AB20054F510 /* Components */,
@@ -282,11 +289,37 @@
 		06BFCF6D28BC154700567240 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				06BFCF7228BC28EA00567240 /* NetworkCaller.swift */,
-				06BFCF7428BC291100567240 /* NetworkRequest.swift */,
-				06BFCF7828BC584400567240 /* NetworkError.swift */,
+				06BFCF7B28BC699500567240 /* ModelAdapter */,
+				06BFCF7A28BC698800567240 /* Network */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		06BFCF7A28BC698800567240 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				06BFCF7828BC584400567240 /* NetworkError.swift */,
+				06BFCF7428BC291100567240 /* NetworkRequest.swift */,
+				06BFCF7228BC28EA00567240 /* NetworkCaller.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		06BFCF7B28BC699500567240 /* ModelAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				06BFCF7C28BC7F0A00567240 /* GenericAdapter.swift */,
+				06BFCF7E28BC818200567240 /* AdapterError.swift */,
+			);
+			path = ModelAdapter;
+			sourceTree = "<group>";
+		};
+		06BFCF8028BC9DCB00567240 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				06BFCF8128BC9E7700567240 /* TopAlbumsModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		06DBCE8A28B9A9E300F27935 /* Coordinator */ = {
@@ -479,6 +512,7 @@
 				06DBCE8F28B9BF6E00F27935 /* LoginCoordinator.swift in Sources */,
 				EB78760D28B1A7A00021B9DA /* RegisterController.swift in Sources */,
 				06BFCF7528BC291100567240 /* NetworkRequest.swift in Sources */,
+				06BFCF7D28BC7F0A00567240 /* GenericAdapter.swift in Sources */,
 				06BFCF7928BC584400567240 /* NetworkError.swift in Sources */,
 				06DBCEA128BAE1A600F27935 /* SearchCoordinator.swift in Sources */,
 				06DBCE9728BAE06100F27935 /* TabBarCoordinator.swift in Sources */,
@@ -490,6 +524,7 @@
 				0675DA9028B700AB004882FB /* ForgottenPasswordView.swift in Sources */,
 				06DBCE9B28BAE14A00F27935 /* HomeViewController.swift in Sources */,
 				0631DA9528B078E60099ACB6 /* Divider.swift in Sources */,
+				06BFCF8228BC9E7700567240 /* TopAlbumsModel.swift in Sources */,
 				0675DA9228B7128D004882FB /* ForgottenPasswordViewModel.swift in Sources */,
 				06DBCE9328B9FB0F00F27935 /* ForgottenPasswordCoordinator.swift in Sources */,
 				06DBCE9D28BAE17100F27935 /* SearchViewController.swift in Sources */,
@@ -497,6 +532,7 @@
 				06459BD728B06B1D0054F510 /* CustomTextField.swift in Sources */,
 				06DBCE8C28B9A9FA00F27935 /* CoordinatorProtocol.swift in Sources */,
 				EBECD25C28B698BE00519F13 /* LoginViewModel.swift in Sources */,
+				06BFCF7F28BC818200567240 /* AdapterError.swift in Sources */,
 				06459B7428AF57760054F510 /* AppDelegate.swift in Sources */,
 				06DBCE9F28BAE19400F27935 /* HomeCoordinator.swift in Sources */,
 				06DBCE9128B9FAFF00F27935 /* RegisterCoordinator.swift in Sources */,
