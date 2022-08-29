@@ -14,7 +14,7 @@ protocol GenericAdapterProtocol {
 class GenericAdapter: GenericAdapterProtocol {
     var connection: NetworkCaller?
     
-    init(connection: NetworkCaller) {
+    init(connection: NetworkCaller = NetworkCaller()) {
         self.connection = connection
     }
     
@@ -27,6 +27,7 @@ class GenericAdapter: GenericAdapterProtocol {
                     completion(.success(result))
                                 
                 } catch {
+                    print(error)
                     completion(.failure(AdapterError.decodeError))
                 }
             case .failure(_):

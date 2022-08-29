@@ -8,9 +8,21 @@
 import Foundation
 
 struct TopAlbums: Codable {
-    var loved: [Info]
+    let loved: [Info]
 }
 
-struct Info: Codable, Hashable, Equatable {
-    var strAlbum: String
+struct Info: Codable {
+    let strAlbum: String
+    let strArtist: String
+    let strGenre: String
+    let strDescription: String
+    let strTrackThumb: String
 }
+
+
+//GenericAdapter.init().adapter(endpoint: "https://theaudiodb.p.rapidapi.com/mostloved.php?format=track") { (album: Result<TopAlbums, Error>) in
+//    switch album {
+//    case .success(let albums):
+//        albums.loved.forEach({print($0.strArtist)})
+//    case .failure(let error):
+//        print(error)
