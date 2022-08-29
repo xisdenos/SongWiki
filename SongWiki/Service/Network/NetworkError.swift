@@ -8,7 +8,6 @@
 import Foundation
 
 enum NetworkError: Error {
-    case decodeError
     case noData
     case invalidURL
     case invalidStatusCode
@@ -19,8 +18,6 @@ extension NetworkError: LocalizedError {
     
     var errorDescription: String? {
         switch self {
-        case .decodeError:
-            return "Error during data decoding"
         case .noData:
             return "Data error"
         case .invalidURL:

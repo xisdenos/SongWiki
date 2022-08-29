@@ -27,10 +27,10 @@ class GenericAdapter: GenericAdapterProtocol {
                     completion(.success(result))
                                 
                 } catch {
-                    completion(.failure(NetworkError.decodeError))
+                    completion(.failure(AdapterError.decodeError))
                 }
             case .failure(_):
-                completion(.failure(NetworkError.noData))
+                completion(.failure(AdapterError.noData))
             }
         })
     }
