@@ -55,7 +55,8 @@ class HomeView: UIView {
         let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
         cv.register(TopAlbumCollectionViewCell.self, forCellWithReuseIdentifier: TopAlbumCollectionViewCell.identifier)
-        cv.backgroundColor = UIColor(white: 1, alpha: 0.32)
+        cv.backgroundColor = UIColor(white: 1, alpha: 0)
+        cv.showsVerticalScrollIndicator = false
         return cv
     }()
     

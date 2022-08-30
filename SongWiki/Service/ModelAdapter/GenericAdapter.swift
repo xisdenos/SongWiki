@@ -14,7 +14,7 @@ protocol GenericAdapterProtocol {
 class GenericAdapter: GenericAdapterProtocol {
     var connection: NetworkCaller?
     
-    init(connection: NetworkCaller = NetworkCaller()) {
+    init(connection: NetworkCaller) {
         self.connection = connection
     }
     

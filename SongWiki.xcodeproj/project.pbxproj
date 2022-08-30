@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0631DA9528B078E60099ACB6 /* Divider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631DA9428B078E60099ACB6 /* Divider.swift */; };
 		0638030E28BD46320058B215 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0638030D28BD46320058B215 /* HomeView.swift */; };
+		063CE35228BDCE03005ED7D4 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063CE35128BDCE03005ED7D4 /* HomeViewModel.swift */; };
 		06459B7428AF57760054F510 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459B7328AF57760054F510 /* AppDelegate.swift */; };
 		06459B7628AF57760054F510 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459B7528AF57760054F510 /* SceneDelegate.swift */; };
 		06459B7828AF57760054F510 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459B7728AF57760054F510 /* LoginController.swift */; };
@@ -73,6 +74,7 @@
 /* Begin PBXFileReference section */
 		0631DA9428B078E60099ACB6 /* Divider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Divider.swift; sourceTree = "<group>"; };
 		0638030D28BD46320058B215 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		063CE35128BDCE03005ED7D4 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		06459B7028AF57760054F510 /* SongWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SongWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06459B7328AF57760054F510 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06459B7528AF57760054F510 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +181,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		063CE35028BDCDE6005ED7D4 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				063CE35128BDCE03005ED7D4 /* HomeViewModel.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
 		06459B6728AF57760054F510 = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +258,7 @@
 		06459BCA28B02A790054F510 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				063CE35028BDCDE6005ED7D4 /* Product */,
 				0675DA8528B6B797004882FB /* LoginCycle */,
 			);
 			path = ViewModel;
@@ -436,7 +447,6 @@
 				7A0E73DA4F8847D734E3BDE1 /* Pods-SongWikiTests.debug.xcconfig */,
 				3CA0E6A3344F1AD80CFF2044 /* Pods-SongWikiTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -688,6 +698,7 @@
 				06BFCF7928BC584400567240 /* NetworkError.swift in Sources */,
 				06DBCEA128BAE1A600F27935 /* SearchCoordinator.swift in Sources */,
 				0638030E28BD46320058B215 /* HomeView.swift in Sources */,
+				063CE35228BDCE03005ED7D4 /* HomeViewModel.swift in Sources */,
 				06DBCE9728BAE06100F27935 /* TabBarCoordinator.swift in Sources */,
 				06459B7E28AF57760054F510 /* SongWiki.xcdatamodeld in Sources */,
 				0675DA8A28B6B8CB004882FB /* RegistrationViewModel.swift in Sources */,
