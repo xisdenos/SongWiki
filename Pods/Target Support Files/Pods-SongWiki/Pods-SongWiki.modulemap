@@ -1,0 +1,6 @@
+framework module Pods_SongWiki {
+  umbrella header "Pods-SongWiki-umbrella.h"
+
+  export *
+  module * { export * }
+}

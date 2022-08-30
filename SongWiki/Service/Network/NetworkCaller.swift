@@ -19,8 +19,8 @@ final class NetworkCaller: NetworkCallerProtocol {
             completion(.failure(NetworkError.invalidURL))
             return
         }
-        
-        var urlRequest = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+        //, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0
+        var urlRequest = URLRequest(url: url)
         urlRequest.allHTTPHeaderFields = request.headers
         urlRequest.httpMethod = request.method.rawValue.uppercased()
         
