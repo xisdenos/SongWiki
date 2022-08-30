@@ -51,8 +51,10 @@ class HomeView: UIView {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
         layout.scrollDirection = .vertical
         
+//        layout.itemSize = CGSize(width: 150, height: 100)
         let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.register(TopAlbumCollectionViewCell.self, forCellWithReuseIdentifier: TopAlbumCollectionViewCell.identifier)
         cv.backgroundColor = UIColor(white: 1, alpha: 0.32)
         return cv
     }()
@@ -63,7 +65,6 @@ class HomeView: UIView {
         collectionView.delegate = delegate
         collectionView.dataSource = dataSource
     }
-    
     
     
     //MARK: - Initializers

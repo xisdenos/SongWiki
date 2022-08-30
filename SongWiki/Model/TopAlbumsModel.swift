@@ -16,7 +16,7 @@ struct Info: Codable {
     let strArtist: String
     let strGenre: String
     let strDescription: String
-    let strTrackThumb: String
+    let strTrackThumb: String?
 }
 
 

@@ -28,6 +28,7 @@
 		0675DA8E28B70039004882FB /* ForgottenPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0675DA8D28B70039004882FB /* ForgottenPasswordController.swift */; };
 		0675DA9028B700AB004882FB /* ForgottenPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0675DA8F28B700AB004882FB /* ForgottenPasswordView.swift */; };
 		0675DA9228B7128D004882FB /* ForgottenPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0675DA9128B7128D004882FB /* ForgottenPasswordViewModel.swift */; };
+		069CA36C28BD5D8C00C3F3EE /* TopAlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069CA36B28BD5D8C00C3F3EE /* TopAlbumCollectionViewCell.swift */; };
 		06BFCF7328BC28EA00567240 /* NetworkCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BFCF7228BC28EA00567240 /* NetworkCaller.swift */; };
 		06BFCF7528BC291100567240 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BFCF7428BC291100567240 /* NetworkRequest.swift */; };
 		06BFCF7928BC584400567240 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BFCF7828BC584400567240 /* NetworkError.swift */; };
@@ -92,6 +93,7 @@
 		0675DA8D28B70039004882FB /* ForgottenPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgottenPasswordController.swift; sourceTree = "<group>"; };
 		0675DA8F28B700AB004882FB /* ForgottenPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgottenPasswordView.swift; sourceTree = "<group>"; };
 		0675DA9128B7128D004882FB /* ForgottenPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgottenPasswordViewModel.swift; sourceTree = "<group>"; };
+		069CA36B28BD5D8C00C3F3EE /* TopAlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAlbumCollectionViewCell.swift; sourceTree = "<group>"; };
 		06BFCF7228BC28EA00567240 /* NetworkCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCaller.swift; sourceTree = "<group>"; };
 		06BFCF7428BC291100567240 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		06BFCF7828BC584400567240 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		0638030F28BD57920058B215 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				069CA36B28BD5D8C00C3F3EE /* TopAlbumCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				0675DA8E28B70039004882FB /* ForgottenPasswordController.swift in Sources */,
 				06DBCE8F28B9BF6E00F27935 /* LoginCoordinator.swift in Sources */,
 				EB78760D28B1A7A00021B9DA /* RegisterController.swift in Sources */,
+				069CA36C28BD5D8C00C3F3EE /* TopAlbumCollectionViewCell.swift in Sources */,
 				06BFCF7528BC291100567240 /* NetworkRequest.swift in Sources */,
 				06BFCF7D28BC7F0A00567240 /* GenericAdapter.swift in Sources */,
 				06BFCF7928BC584400567240 /* NetworkError.swift in Sources */,
