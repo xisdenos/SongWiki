@@ -22,6 +22,14 @@ class HomeCoordinator: Coordinator {
     }
     
     func start() {
-        
+        homeViewController.passDataToDetail = { (info) in
+
+            self.startDetailScreen(details: info)
+        }
+    }
+    
+    func startDetailScreen(details: Info) {
+        let coordinator: DetailCoordinator = DetailCoordinator(navigationController: navigationController, infoDetails: details)
+        coordinator.start()
     }
 }
