@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		061FE4F728C0332700373F9E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061FE4F628C0332700373F9E /* DetailViewController.swift */; };
+		061FE4F928C0339400373F9E /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061FE4F828C0339400373F9E /* DetailView.swift */; };
+		061FE4FB28C033C800373F9E /* DetailViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061FE4FA28C033C800373F9E /* DetailViewCoordinator.swift */; };
 		0631DA9528B078E60099ACB6 /* Divider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631DA9428B078E60099ACB6 /* Divider.swift */; };
 		0638030E28BD46320058B215 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0638030D28BD46320058B215 /* HomeView.swift */; };
 		063CE35228BDCE03005ED7D4 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063CE35128BDCE03005ED7D4 /* HomeViewModel.swift */; };
@@ -72,6 +75,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		061FE4F628C0332700373F9E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		061FE4F828C0339400373F9E /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		061FE4FA28C033C800373F9E /* DetailViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCoordinator.swift; sourceTree = "<group>"; };
 		0631DA9428B078E60099ACB6 /* Divider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Divider.swift; sourceTree = "<group>"; };
 		0638030D28BD46320058B215 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		063CE35128BDCE03005ED7D4 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -169,6 +175,7 @@
 			children = (
 				0638030F28BD57920058B215 /* Cell */,
 				0638030D28BD46320058B215 /* HomeView.swift */,
+				061FE4F828C0339400373F9E /* DetailView.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -414,6 +421,7 @@
 			children = (
 				06DBCE9E28BAE19400F27935 /* HomeCoordinator.swift */,
 				06DBCEA028BAE1A600F27935 /* SearchCoordinator.swift */,
+				061FE4FA28C033C800373F9E /* DetailViewCoordinator.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -423,6 +431,7 @@
 			children = (
 				06DBCE9A28BAE14A00F27935 /* HomeViewController.swift */,
 				06DBCE9C28BAE17100F27935 /* SearchViewController.swift */,
+				061FE4F628C0332700373F9E /* DetailViewController.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -695,6 +704,7 @@
 				069CA36C28BD5D8C00C3F3EE /* TopAlbumCollectionViewCell.swift in Sources */,
 				06BFCF7528BC291100567240 /* NetworkRequest.swift in Sources */,
 				06BFCF7D28BC7F0A00567240 /* GenericAdapter.swift in Sources */,
+				061FE4F928C0339400373F9E /* DetailView.swift in Sources */,
 				06BFCF7928BC584400567240 /* NetworkError.swift in Sources */,
 				06DBCEA128BAE1A600F27935 /* SearchCoordinator.swift in Sources */,
 				0638030E28BD46320058B215 /* HomeView.swift in Sources */,
@@ -711,12 +721,14 @@
 				06BFCF8228BC9E7700567240 /* TopAlbumsModel.swift in Sources */,
 				0675DA9228B7128D004882FB /* ForgottenPasswordViewModel.swift in Sources */,
 				06DBCE9328B9FB0F00F27935 /* ForgottenPasswordCoordinator.swift in Sources */,
+				061FE4FB28C033C800373F9E /* DetailViewCoordinator.swift in Sources */,
 				06DBCE9D28BAE17100F27935 /* SearchViewController.swift in Sources */,
 				06459BD328B055130054F510 /* Gradient.swift in Sources */,
 				06459BD728B06B1D0054F510 /* CustomTextField.swift in Sources */,
 				06DBCE8C28B9A9FA00F27935 /* CoordinatorProtocol.swift in Sources */,
 				EBECD25C28B698BE00519F13 /* LoginViewModel.swift in Sources */,
 				06BFCF7F28BC818200567240 /* AdapterError.swift in Sources */,
+				061FE4F728C0332700373F9E /* DetailViewController.swift in Sources */,
 				06459B7428AF57760054F510 /* AppDelegate.swift in Sources */,
 				06DBCE9F28BAE19400F27935 /* HomeCoordinator.swift in Sources */,
 				06DBCE9128B9FAFF00F27935 /* RegisterCoordinator.swift in Sources */,

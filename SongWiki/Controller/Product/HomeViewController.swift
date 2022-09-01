@@ -11,6 +11,7 @@ class HomeViewController: UIViewController {
 
     var homeView: HomeView = HomeView()
     var homeViewModel: HomeViewModel = HomeViewModel()
+    var passDataToDetail: (() -> Void)?
     
     override func loadView() {
         super.loadView()
@@ -53,6 +54,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         let width = ((collectionView.frame.width - 15) / 2)
         return CGFloat(20)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Fala ae")
     }
 }
 

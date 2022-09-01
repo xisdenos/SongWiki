@@ -22,6 +22,5 @@ class HomeCoordinator: Coordinator {
     }
     
     func start() {
-        
     }
 }
