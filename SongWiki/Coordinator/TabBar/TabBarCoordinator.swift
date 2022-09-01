@@ -22,6 +22,8 @@ class TabBarCoordinator: Coordinator {
         let searchCoordinator = SearchCoordinator(navigationController: self.navigationController)
         
         tabBarController.setViewControllers([homeCoordinator.homeViewController, searchCoordinator.searchViewController], animated: true)
+        homeCoordinator.start()
         self.navigationController.pushViewController(tabBarController, animated: true)
+        
     }
 }

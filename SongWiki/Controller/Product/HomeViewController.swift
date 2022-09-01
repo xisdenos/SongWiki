@@ -11,7 +11,7 @@ class HomeViewController: UIViewController {
 
     var homeView: HomeView = HomeView()
     var homeViewModel: HomeViewModel = HomeViewModel()
-    var passDataToDetail: (() -> Void)?
+    var passDataToDetail: ((Info) -> Void)?
     
     override func loadView() {
         super.loadView()
@@ -57,7 +57,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Fala ae")
+        self.passDataToDetail?(homeViewModel.albumsList[indexPath.row])
     }
 }
 

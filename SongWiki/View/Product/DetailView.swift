@@ -20,13 +20,17 @@ class DetailView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Primeiro Teste"
+        label.textColor = .green
         label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.textAlignment = .center
         return label
     }()
     
     lazy var albumPhotoImageView: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
+        image.contentMode = .scaleAspectFit
+        image.heightAnchor.constraint(equalToConstant: 60).isActive = true
         return image
     }()
     
@@ -35,7 +39,21 @@ class DetailView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Primeiro Teste"
         label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.textAlignment = .center
         return label
+    }()
+    
+    lazy var stackView: UIStackView = {
+        let sv = UIStackView()
+        sv.translatesAutoresizingMaskIntoConstraints = false
+        sv.axis = .vertical
+        sv.distribution = .fillEqually
+        sv.addArrangedSubview(albumNameLabel)
+        sv.addArrangedSubview(albumPhotoImageView)
+        sv.addArrangedSubview(bandNameLabel)
+        sv.spacing = 10
+        sv.isUserInteractionEnabled = true
+        return sv
     }()
     
     //MARK: - Initializer
@@ -43,7 +61,7 @@ class DetailView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(self.gradient)
-        addSubview(self.albumNameLabel)
+        addSubview(self.stackView)
         self.configConstraints()
     }
     
@@ -52,11 +70,11 @@ class DetailView: UIView {
     }
     
     //MARK: - SetUp function
-    func setUpCell(albumInfo: Info ) {
-        self.albumNameLabel.text = albumInfo.strAlbum
-        self.bandNameLabel.text = albumInfo.strArtist
+    func setUpCell(albumInfo: DetailViewModel ) {
+        self.albumNameLabel.text = albumInfo.getAlbumName()
+        self.bandNameLabel.text = albumInfo.getAlbumBandName()
         
-        guard let unwrappedURL = albumInfo.strTrackThumb else {
+        guard let unwrappedURL = albumInfo.getAlbumImage() else {
             self.albumPhotoImageView.image = UIImage(systemName: "trash")
             return
         }
@@ -75,8 +93,10 @@ class DetailView: UIView {
             self.gradient.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.gradient.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             
-            self.albumNameLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 10),
-            self.albumNameLabel.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
-        ])
+            self.stackView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20),
+            self.stackView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            self.stackView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            self.stackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -20)
+            ])
     }
 }
