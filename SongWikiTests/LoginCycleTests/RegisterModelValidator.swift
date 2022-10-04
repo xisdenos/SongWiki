@@ -34,9 +34,10 @@ final class RegisterModelValidator: XCTestCase {
         var sut = RegistrationViewModel()
         
         //Act
-        sut.user = "jaime"
+        sut.user = "dfggh"
         
         //Assert
+        XCTAssertTrue(sut.validateUser(), "The validateUser() should have returned True when user TextField is not empty and is bigger than 3 and smaller than 13 ")
     }
 }
 
