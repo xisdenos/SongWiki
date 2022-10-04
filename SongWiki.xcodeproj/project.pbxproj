@@ -27,6 +27,7 @@
 		06459BD328B055130054F510 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459BD228B055130054F510 /* Gradient.swift */; };
 		06459BD728B06B1D0054F510 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459BD628B06B1D0054F510 /* CustomTextField.swift */; };
 		06459BD928B06E800054F510 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459BD828B06E800054F510 /* AuthButton.swift */; };
+		064DB79828EBA29B00198BB7 /* RegisterModelValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064DB79728EBA29B00198BB7 /* RegisterModelValidator.swift */; };
 		0675DA8828B6B7DF004882FB /* FieldValidationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0675DA8728B6B7DF004882FB /* FieldValidationProtocol.swift */; };
 		0675DA8A28B6B8CB004882FB /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0675DA8928B6B8CB004882FB /* RegistrationViewModel.swift */; };
 		0675DA8C28B6D732004882FB /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0675DA8B28B6D732004882FB /* BackButton.swift */; };
@@ -100,6 +101,7 @@
 		06459BD228B055130054F510 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		06459BD628B06B1D0054F510 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		06459BD828B06E800054F510 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
+		064DB79728EBA29B00198BB7 /* RegisterModelValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModelValidator.swift; sourceTree = "<group>"; };
 		0675DA8728B6B7DF004882FB /* FieldValidationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidationProtocol.swift; sourceTree = "<group>"; };
 		0675DA8928B6B8CB004882FB /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		0675DA8B28B6D732004882FB /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 		06459B8C28AF57780054F510 /* SongWikiTests */ = {
 			isa = PBXGroup;
 			children = (
+				064DB79628EBA27000198BB7 /* LoginCycleTests */,
 				06459B8D28AF57780054F510 /* SongWikiTests.swift */,
 			);
 			path = SongWikiTests;
@@ -305,6 +308,14 @@
 				06459B7328AF57760054F510 /* AppDelegate.swift */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		064DB79628EBA27000198BB7 /* LoginCycleTests */ = {
+			isa = PBXGroup;
+			children = (
+				064DB79728EBA29B00198BB7 /* RegisterModelValidator.swift */,
+			);
+			path = LoginCycleTests;
 			sourceTree = "<group>";
 		};
 		0675DA8528B6B797004882FB /* LoginCycle */ = {
@@ -749,6 +760,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06459B8E28AF57780054F510 /* SongWikiTests.swift in Sources */,
+				064DB79828EBA29B00198BB7 /* RegisterModelValidator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

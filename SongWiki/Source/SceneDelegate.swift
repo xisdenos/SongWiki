@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navVC: UINavigationController = UINavigationController()
         self.window?.rootViewController = navVC
         
-        let coordinator = TabBarCoordinator(navigationController: navVC)
+        let coordinator = LoginCoordinator(navigationController: navVC)
         coordinator.start()
     }
 

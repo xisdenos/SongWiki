@@ -43,6 +43,18 @@ class DetailView: UIView {
         return label
     }()
     
+    lazy var albumDescription: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Primeiro Teste"
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        return label
+    }()
+    
+//frame: CGRect(x: 10, y: 10, width: (self.frame.size.width - 15), height: (self.frame.size.height - 15))
+    
     lazy var stackView: UIStackView = {
         let sv = UIStackView()
         sv.translatesAutoresizingMaskIntoConstraints = false
@@ -51,9 +63,19 @@ class DetailView: UIView {
         sv.addArrangedSubview(albumNameLabel)
         sv.addArrangedSubview(albumPhotoImageView)
         sv.addArrangedSubview(bandNameLabel)
+        sv.addArrangedSubview(albumDescription)
         sv.spacing = 10
         sv.isUserInteractionEnabled = true
+        
         return sv
+    }()
+    
+    lazy var scrollView: UIScrollView = {
+        let scroll = UIScrollView()
+        scroll.translatesAutoresizingMaskIntoConstraints = false
+        scroll.backgroundColor = UIColor(white: 1, alpha: 0)
+        scroll.addSubview(self.stackView)
+        return scroll
     }()
     
     //MARK: - Initializer
@@ -61,7 +83,8 @@ class DetailView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(self.gradient)
-        addSubview(self.stackView)
+//        addSubview(self.stackView)
+        addSubview(self.scrollView)
         self.configConstraints()
     }
     
@@ -73,6 +96,7 @@ class DetailView: UIView {
     func setUpCell(albumInfo: DetailViewModel ) {
         self.albumNameLabel.text = albumInfo.getAlbumName()
         self.bandNameLabel.text = albumInfo.getAlbumBandName()
+        self.albumDescription.text = albumInfo.getAlbumDescription()
         
         guard let unwrappedURL = albumInfo.getAlbumImage() else {
             self.albumPhotoImageView.image = UIImage(systemName: "trash")
@@ -93,10 +117,16 @@ class DetailView: UIView {
             self.gradient.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.gradient.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             
-            self.stackView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20),
-            self.stackView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            self.stackView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -10),
-            self.stackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -20)
+            
+            self.scrollView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20),
+            self.scrollView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            self.scrollView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            self.scrollView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            
+            self.stackView.topAnchor.constraint(equalTo: self.scrollView.topAnchor, constant: 20),
+            self.stackView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor, constant: 10),
+            self.stackView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor, constant: -10),
+            self.stackView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor, constant: -20),
             ])
     }
 }

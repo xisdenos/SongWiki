@@ -15,18 +15,24 @@ struct RegistrationViewModel: FieldValidation {
     var password: String?
     var passwordConfirmation: String?
     
-    //MARK: - Validations
+    //MARK: - Validations variables
+    
     var imputNotEmpty: Bool {
         return
             email?.isEmpty == false &&
             user?.isEmpty == false &&
             password?.isEmpty == false &&
-            passwordConfirmation?.isEmpty == false &&
-            password == passwordConfirmation
+            passwordConfirmation?.isEmpty == false
+    }
+    
+    var passwordEqualPasswordConfirmation: Bool {
+        return password == passwordConfirmation
     }
     
     var shouldEnableButton: Bool {
-        return imputNotEmpty
+        return
+            imputNotEmpty &&
+            passwordEqualPasswordConfirmation
     }
     
     var buttonTitleColor: UIColor {
@@ -37,5 +43,15 @@ struct RegistrationViewModel: FieldValidation {
         return imputNotEmpty ? .systemPurple : .systemPurple.withAlphaComponent(0.5)
     }
     
+    //MARK: - Validations functions
     
+    func validateEmail() -> Bool {
+        guard let email = email else {
+            return false
+        }
+        if !email.isEmpty {
+            return email.contains("@") && email.contains(".")
+        }
+        return false
+    }
 }
