@@ -54,4 +54,16 @@ struct RegistrationViewModel: FieldValidation {
         }
         return false
     }
+    
+    func validateUser() -> Bool {
+        guard let user = user else {
+            return false
+        }
+        
+        if !user.isEmpty {
+            return user.count >= 4 && user.count <= 12
+        }
+        
+        return false
+    }
 }
