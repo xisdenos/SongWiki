@@ -39,6 +39,28 @@ final class RegisterModelValidator: XCTestCase {
         //Assert
         XCTAssertTrue(sut.validateUser(), "The validateUser() should have returned True when user TextField is not empty and is bigger than 3 and smaller than 13 ")
     }
+    
+    func testRegisterModelValidator_WhenPasswordValidation_ShouldReturnTrue() {
+        // Arrange
+        var sut = RegistrationViewModel()
+        
+        //Act
+        sut.password = "asdasda"
+        
+        //Assert
+        XCTAssertTrue(sut.validatePassword(), "The validatePassword() should have returned True when password TextField is not empty and is bigger than 3 and smaller than 13 ")
+    }
+    
+    func testRegisterModelValidator_WhenPasswordConfirmationValidation_ShouldReturnTrue() {
+        // Arrange
+        var sut = RegistrationViewModel()
+        
+        //Act
+        sut.passwordConfirmation = "asdasda"
+        
+        //Assert
+        XCTAssertTrue(sut.validatePasswordConfirmation(), "The validatePasswordConfirmation() should have returned True when password TextField is not empty and is bigger than 3 and smaller than 13 ")
+    }
 }
 
 
