@@ -61,6 +61,18 @@ final class RegisterModelValidator: XCTestCase {
         //Assert
         XCTAssertTrue(sut.validatePasswordConfirmation(), "The validatePasswordConfirmation() should have returned True when password TextField is not empty and is bigger than 3 and smaller than 13 ")
     }
+    
+    func testRegisterModelValidator_WhenPasswordAndPasswordConfirmationEquivalence_ShouldReturnTrue() {
+        // Arrange
+        var sut = RegistrationViewModel()
+        
+        //Act
+        sut.password = "sdsdfdf"
+        sut.passwordConfirmation = "sdsdfdf"
+        
+        //Assert
+        XCTAssertTrue(sut.passwordEqualPasswordConfirmation, "The passwordEqualPasswordConfirmation should have returned True when password TextField and password confirmation TextField are equals ")
+    }
 }
 
 
